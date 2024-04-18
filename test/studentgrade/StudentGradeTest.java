@@ -1,35 +1,38 @@
 package studentgrade;
+/*no need for the TestCase import*/
+/*New imports*/
+import org.junit.Assert;
+import org.junit.Test;
 
-import junit.framework.TestCase;
-
-/* JUnit 3.8.1 */
-public class StudentGradeTest extends TestCase {
+/* JUnit 4.13.2 */
+/* no need to extend TestCase */
+public class StudentGradeTest {
     
-    public StudentGradeTest(String testName) {
-        super(testName);
-    }
-
+    /* Use @Test annotation */
+    @Test
     public void testGetGrade95() {
         System.out.println("getGrade 95");
         int mark = 95;
         String expResult = "A";
         String result = StudentGrade.getGrade(mark);
-        assertEquals(expResult, result);
+        Assert.assertEquals(expResult, result);
     }
 
+    @Test
     public void testGetGrade85() {
         System.out.println("getGrade 85");
         int mark = 85;
         String expResult = "B";
         String result = StudentGrade.getGrade(mark);
-        assertEquals(expResult, result);
+        Assert.assertEquals(expResult, result);
     }
     
+    @Test
     public void testGetGrade75() {
-        System.out.println("getGrade 85");
+        System.out.println("getGrade 75");
         int mark = 75;
         String expResult = "F";
         String result = StudentGrade.getGrade(mark);
-        assertEquals(expResult, result);
+        Assert.assertEquals(expResult, result);
     }
 }
